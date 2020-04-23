@@ -1,9 +1,9 @@
 {
   "name": "@evilmonkeyinc/dnd-5e-spells",
-  "version": "0.0.1-alpha2",
+  "version": "0.0.1-alpha3",
   "description": "List of the D&D spells available on the OGL licence",
-  "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "main": "dist/src/Index.js",
+  "types": "dist/src/Index.d.ts",
   "author": "Scott McGowan <evilmonkeyinc@gmail.com>",
   "license": "MIT",
   "scripts": {
