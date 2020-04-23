@@ -1,0 +1,53 @@
+{
+  "name": "@evilmonkeyinc/dnd-5e-spells",
+  "version": "0.0.1",
+  "description": "List of the D&D spells available on the OGL licence",
+  "main": "lib/src/index.js",
+  "types": "lib/src/index.d.ts",
+  "author": "Scott McGowan <evilmonkeyinc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "lint": "eslint --ext ts ."
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "@typescript-eslint/eslint-plugin": "^2.29.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^2.29.0",
+    "@typescript-eslint/parser": "^2.29.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.4.0",
+    "ts-jest": "^25.4.0",
+    "typescript": "^3.8.3"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "testRegex": "^.+\\.spec\\.ts$"
+  },
+  "files": [
+    "lib",
+    "public"
+  ],
+  "directories": {
+    "lib": "lib",
+    "public": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evilmonkeyinc/dnd-5e-spells.git"
+  },
+  "bugs": {
+    "url": "https://github.com/evilmonkeyinc/dnd-5e-spells/issues"
+  },
+  "homepage": "https://github.com/evilmonkeyinc/dnd-5e-spells",
+  "publishConfig": {
+    "access": "public"
+  }
+}
