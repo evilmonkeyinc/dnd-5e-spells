@@ -1,6 +1,6 @@
 {
   "name": "@evilmonkeyinc/dnd-5e-spells",
-  "version": "0.0.1-alpha0",
+  "version": "0.0.1-alpha1",
   "description": "List of the D&D spells available on the OGL licence",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
