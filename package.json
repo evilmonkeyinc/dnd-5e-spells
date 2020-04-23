@@ -1,20 +1,21 @@
 {
   "name": "@evilmonkeyinc/dnd-5e-spells",
-  "version": "0.0.1-alpha3",
+  "version": "0.0.1-alpha4",
   "description": "List of the D&D spells available on the OGL licence",
   "main": "dist/src/Index.js",
   "types": "dist/src/Index.d.ts",
   "author": "Scott McGowan <evilmonkeyinc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf ./dist/ && tsc",
     "test": "jest",
     "lint": "eslint --ext ts .",
-    "prepublishOnly": "./scripts/prepublishOnly.sh && npm run lint && tsc",
+    "prepublishOnly": "./scripts/prepublishOnly.sh && npm run lint && npm run build",
     "postpublish": "./scripts/postpublish.sh"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
+    "@types/node": "^13.13.2",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",

@@ -48,16 +48,17 @@ export enum School {
 
 export default interface Spell {
     name: string;
-    school: School;
     level: number;
+    school: School;
     casting_time: CastingTime;
+    duration: string;
     range: string;
     components: Components;
-    duration: string;
     description: string[];
     higher_levels?: string;
     ritual?: boolean;
     attack_save?: AttackSave;
     concentration?: boolean;
     reaction_trigger?: string;
+    classes?: string[];
 }
