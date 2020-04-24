@@ -1,12 +1,17 @@
 import spells from '../public/spells.json';
-import spellsByClass from '../public/spells_by_class.json';
 import Spell from './Spell';
-import { SpellsByClass } from './SpellsByClass';
+import SpellAPI from './SpellAPI';
 
-export function all(): Spell[] {
+let spellAPI: SpellAPI | undefined;
+
+export function getSpellAPI(): SpellAPI {
+    if (spellAPI === undefined) {
+        spellAPI = new SpellAPI();
+    }
+    return spellAPI;
+}
+
+export function raw(): Spell[] {
     return spells as Spell[];
 }
 
-export function classList(): SpellsByClass {
-    return spellsByClass as SpellsByClass;
-}

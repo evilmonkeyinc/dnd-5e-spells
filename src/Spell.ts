@@ -1,4 +1,15 @@
 
+export enum SpellcasterClass {
+    Bard = 'bard',
+    Cleric = 'cleric',
+    Druid = 'druid',
+    Paladin = 'paladin',
+    Ranger = 'ranger',
+    Sorcerer = 'sorcerer',
+    Warlock = 'warlock',
+    Wizard = 'wizard',
+}
+
 export enum AttackSave {
     CharismaSave = 'charisma_save',
     ConstitutionSave = 'constitution_save',
@@ -60,5 +71,5 @@ export default interface Spell {
     attack_save?: AttackSave;
     concentration?: boolean;
     reaction_trigger?: string;
-    classes?: string[];
+    classes: SpellcasterClass[];
 }

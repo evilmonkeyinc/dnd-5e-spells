@@ -1,7 +1,7 @@
 {
   "name": "@evilmonkeyinc/dnd-5e-spells",
-  "version": "0.0.1-alpha4",
-  "description": "List of the D&D spells available on the OGL licence",
+  "version": "0.0.1",
+  "description": "Helper functions to list and query the D&D spells available on the OGL licence",
   "main": "dist/src/Index.js",
   "types": "dist/src/Index.d.ts",
   "author": "Scott McGowan <evilmonkeyinc@gmail.com>",
