@@ -1,7 +1,7 @@
 import SpellAPI, { Query } from './SpellAPI';
 import { SpellcasterClass, School } from './Spell';
 
-describe('list query', () => {
+describe('SpellAPI.query', () => {
 
     const tests: {
         name: string,
@@ -87,7 +87,7 @@ describe('list query', () => {
 
     tests.forEach((test) => {
         it(test.name, (done) => {
-            const actual = spellAPI.list(test.query);
+            const actual = spellAPI.query(test.query);
             expect(actual.length).toEqual(test.expected.results);
             actual.forEach((spell) => {
                 if (test.query.classes !== undefined && test.query.classes.length > 0) {

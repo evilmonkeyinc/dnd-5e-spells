@@ -22,11 +22,11 @@ export default class SpellAPI {
         return this.spellByName.get(name);
     }
 
-    public listAll(): Spell[] {
+    public list(): Spell[] {
         return spellData as Spell[];
     }
 
-    public list(query: Query): Spell[] {
+    public query(query: Query): Spell[] {
         let spellList = new Array<Spell>();
 
         let spellNameList = new Array<string>();
@@ -82,39 +82,6 @@ export default class SpellAPI {
             }
         })
 
-        return spellList;
-    }
-
-    public listByClass(spellcasterClass: SpellcasterClass): Spell[] {
-        let spellList = new Array<Spell>();
-        this.spellsByClass.get(spellcasterClass)?.forEach((spellName) => {
-            const spell = this.spellByName.get(spellName);
-            if (spell !== undefined) {
-                spellList.push(spell);
-            }
-        })
-        return spellList;
-    }
-
-    public listByLevel(level: number): Spell[] {
-        let spellList = new Array<Spell>();
-        this.spellsByLevel.get(level)?.forEach((spellName) => {
-            const spell = this.spellByName.get(spellName);
-            if (spell !== undefined) {
-                spellList.push(spell);
-            }
-        })
-        return spellList;
-    }
-
-    public listBySchool(school: School): Spell[] {
-        let spellList = new Array<Spell>();
-        this.spellsBySchool.get(school)?.forEach((spellName) => {
-            const spell = this.spellByName.get(spellName);
-            if (spell !== undefined) {
-                spellList.push(spell);
-            }
-        })
         return spellList;
     }
 
