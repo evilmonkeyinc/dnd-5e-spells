@@ -16,7 +16,7 @@ Alternatively you can use the `getSpellAPI()` function to get the `SpellAPI` whi
 
 ### get
 
-Gets the named spell. This is case sensitive.
+Gets the named spell. This is case insensitive.
 
 ### list
 
@@ -29,6 +29,7 @@ Query the available spells in the collection.
 You can state one or more of the following filters:
 - classes: one or more SpellcasterClass that the spells could belong to.
 - levels: one or more spell levels that the spell could have.
+- name: a string to compare to part or the whole of a name of a spell. This is case insensitive.
 - schools: one or more spell School that the spell could have.
 
 for example, you can request all cantrips (level 0) for Wizards and Warlocks, and all the spells returned will have level 0 and the wizard and/or warlock values in classes
