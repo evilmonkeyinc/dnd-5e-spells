@@ -2,6 +2,7 @@ import Spell, { SpellcasterClass, School } from './Spell';
 import spellData from '../public/spells.json';
 
 export class Query {
+    name?: string;
     classes?: SpellcasterClass[];
     levels?: number[];
     schools?: School[];
@@ -19,7 +20,7 @@ export default class SpellAPI {
     }
 
     public get(name: string): Spell | undefined {
-        return this.spellByName.get(name);
+        return this.spellByName.get(name.toLowerCase());
     }
 
     public list(): Spell[] {
@@ -75,6 +76,14 @@ export default class SpellAPI {
             }
         }
 
+        if (query.name !== undefined && query.name !== '') {
+            const regex = new RegExp(`.*${query.name}.*`, 'gmi');
+            if (spellNameList.length === 0) {
+                spellNameList = Array.from(this.spellByName.keys());
+            }
+            spellNameList = spellNameList.filter((value) => value.match(regex))
+        }
+
         spellNameList.forEach((spellName) => {
             const spell = this.spellByName.get(spellName);
             if (spell !== undefined) {
@@ -88,7 +97,8 @@ export default class SpellAPI {
     private init() {
         if (this.spellByName.size === 0) {
             (spellData as Spell[]).forEach((spell: Spell) => {
-                this.spellByName.set(spell.name, spell);
+                const key = spell.name.toLowerCase()
+                this.spellByName.set(key, spell);
 
                 spell.classes.forEach((spellcaster) => {
                     let classArray = this.spellsByClass.get(spellcaster);
@@ -96,7 +106,7 @@ export default class SpellAPI {
                         classArray = new Array<string>();
                         this.spellsByClass.set(spellcaster, classArray);
                     }
-                    classArray.push(spell.name);
+                    classArray.push(key);
                 });
 
                 let levelArray = this.spellsByLevel.get(spell.level);
@@ -104,14 +114,14 @@ export default class SpellAPI {
                     levelArray = new Array<string>();
                     this.spellsByLevel.set(spell.level, levelArray);
                 }
-                levelArray.push(spell.name);
+                levelArray.push(key);
 
                 let schoolArray = this.spellsBySchool.get(spell.school);
                 if (schoolArray === undefined) {
                     schoolArray = new Array<string>();
                     this.spellsBySchool.set(spell.school, schoolArray);
                 }
-                schoolArray.push(spell.name);
+                schoolArray.push(key);
             });
         }
     }
