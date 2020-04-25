@@ -1,5 +1,14 @@
 # dnd-5e-spells
 
+---
+**DEPRECTAED**
+
+This project has been deprecated.
+
+The same functionality is available through the [SRD API](https://github.com/evilmonkeyinc/srd-api)
+
+---
+
 List of the spells available on the OGL licence from the SRD
 
 ## Usage
@@ -39,3 +48,5 @@ for example, you can request all cantrips (level 0) for Wizards and Warlocks, an
 The file `public/spells.json` contains content from the SRD and is restricted and covered by the Open Gaming Licence (OGL).
 
 You can find the OGL [here](http://www.opengamingfoundation.org/ogl.html).
+
+https://www.wizards.com/default.asp?x=d20/oglfaq/20040123f
